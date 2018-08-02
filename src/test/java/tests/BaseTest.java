@@ -15,16 +15,17 @@ public class BaseTest extends BasePage {
 	@BeforeClass
 	public void init() {
 		initSetp();
+		driver.navigate().to("http://demoqa.com/");
+		driver.manage().window().maximize();
 	}
 
-//	@Test
-//	public void testFindBy() {
-//		BasePage bp = new BasePage();
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("entry-title")));
-//		Object obj = bp.findObj(Constants.CLASS, "entry-title", true);
-//		System.out.println(obj);
-//		Assert.assertEquals(findObj(Constants.CLASS, "entry-title", true).getText(), "Home");
-//	}
+	@Test
+	public void testFindBy() {
+		BasePage bp = new BasePage();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("entry-title")));
+		bp.findObj(Constants.CLASS, "entry-title", true);
+		Assert.assertEquals(findObj(Constants.CLASS, "entry-title", true).getText(), "Home");
+	}
 
 	@AfterClass
 	public void tearDown() {

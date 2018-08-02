@@ -16,7 +16,7 @@ public class BasePage {
 	public void initSetp() {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
-		wait = new WebDriverWait(driver, 15);
+		wait = new WebDriverWait(driver, 30);
 	
 
 	}
